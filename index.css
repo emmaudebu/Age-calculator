@@ -52,6 +52,7 @@ body {
   border: none;
   color: white;
   cursor: pointer;
+  text-align: center;
   background-color: hsl(259, 100%, 65%);
 }
 .main .input-box span ion-icon {
@@ -61,7 +62,7 @@ body {
 
 .display-Box {
   font-weight: 900;
-  font-size: 50px;
+  font-size: 40px;
 }
 .display-Box .value {
   color: hsl(259, 100%, 65%);

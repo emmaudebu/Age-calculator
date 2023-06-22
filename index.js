@@ -5,6 +5,7 @@ const calculate = ()=>{
     let daylabel =document.querySelector(".daylabel")
     let Dayerror =document.querySelector(".error")
     let montherror =document.querySelector(".montherror")
+    let yearerror =document.querySelector(".yearerror")
 let monthlabel =document.querySelector(".monthlabel")
 let yearlabel =document.querySelector(".yearlabel")
 let day = document.querySelector(".Day").value 
@@ -35,9 +36,9 @@ if (day==="") {
     
    }, 3000);
     
-} else if (year==="") {
+} else if (year===""||year.length<4||year.length>4) {
     yearlabel.style.color="red"
-    yearerror.textContent="Month is Empty !"
+    yearerror.textContent="Invalid year!"
     yearerror.style.color="red"
    setTimeout(() => {
     
@@ -53,9 +54,56 @@ if (day==="") {
 }
 
    
-}
-
 function evaluate(params) {
-    alert("done")
+   if (parseInt(day)>31 && parseInt(month)===1 ||
+   parseInt(month)===3 ||
+   parseInt(month)===5 ||
+   parseInt(month)===7 ||
+   parseInt(month)===8||
+   parseInt(month)===10||
+   parseInt(month)===12) {
+
+    daylabel.style.color="red"
+    Dayerror.textContent=" Must be valid Date"
+    Dayerror.style.color="red"
     
+   setTimeout(() => {
+    
+    daylabel.style.color="black"
+    Dayerror.textContent=""
+   }, 3000);
+   } else if (parseInt(day)>30 && parseInt(month)===4 ||
+   parseInt(month)===6 ||
+   parseInt(month)===9 ||
+   parseInt(month)===11 ) {
+    daylabel.style.color="red"
+    Dayerror.textContent=" Must be valid Date"
+    Dayerror.style.color="red"
+    
+   setTimeout(() => {
+    
+    daylabel.style.color="black"
+    Dayerror.textContent=""
+   }, 3000);
+    
+   }else if ( parseInt(day)>29 && parseInt(month)===2) {
+    
+    daylabel.style.color="red"
+    Dayerror.textContent="Day is Empty !"
+    Dayerror.style.color="red"
+   setTimeout(() => {
+    
+    daylabel.style.color="black"
+    Dayerror.textContent=""
+    
+   }, 3000);
+
+   } else {
+    
+    
+   } {
+    
+   }
+    
+}
 }

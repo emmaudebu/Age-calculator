@@ -15,7 +15,7 @@ const calculate = () => {
 
   const date = new Date();
 
-  if (day === "") {
+  if (day === "" && day === NaN) {
     daylabel.style.color = "red";
     Dayerror.textContent = "Day is Empty !";
     Dayerror.style.color = "red";
@@ -23,7 +23,7 @@ const calculate = () => {
       daylabel.style.color = "black";
       Dayerror.textContent = "";
     }, 3000);
-  } else if (month === "") {
+  } else if (month === "" && month === NaN) {
     monthlabel.style.color = "red";
     montherror.textContent = "Month is Empty !";
     montherror.style.color = "red";
@@ -31,7 +31,7 @@ const calculate = () => {
       monthlabel.style.color = "black";
       montherror.textContent = "";
     }, 3000);
-  } else if (year === "" || year.length < 4 || year.length > 4) {
+  } else if (year === "" || year.length < 4 || year.length > 4 || year === NaN) {
     yearlabel.style.color = "red";
     yearerror.textContent = "Invalid year!";
     yearerror.style.color = "red";
@@ -63,9 +63,9 @@ const calculate = () => {
         Dayerror.textContent = "";
       }, 3000);
     } else if (
-      (parseInt(day) > 30 && parseInt(month) === 4) ||
-      parseInt(month) === 6 ||
-      parseInt(month) === 9 ||
+      (parseInt(day) > 30 && parseInt(month) === 4) &&
+      parseInt(month) === 6 &&
+      parseInt(month) === 9 &&
       parseInt(month) === 11
     ) {
       daylabel.style.color = "red";
